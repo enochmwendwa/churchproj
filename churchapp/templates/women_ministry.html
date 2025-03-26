@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOMEN MINISTRY</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
      <!-- Include Font Awesome from CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -18,33 +19,14 @@
             <th>EVENT</th>
             <th>VENUE</th>
         </tr>
+        {% for women in women %}
         <tr>
-            <td>ANNUALY</td>
-            <td>CRUSADE</td>
-            <td>KITHUNTHI MARKET</td>
+            <td>{{women.DATE}}</td>
+            <td>{{women.EVENT}}</td>
+            <td>{{women.VENUE}}</td>
         </tr>
-        <tr>
-            <td>DECEMBER</td>
-            <td>VISITATIONS</td>
-            <td>PASTORS HOME</td>
-        </tr>
-        <tr>
-            <td>HOLIDAYS</td>
-            <td>PRAYERS</td>
-            <td>CHURCH</td>
-        </tr>
-        <tr>
-            <td>APRIL,AUGUST,DECEMBER</td>
-            <td>SEMINARS</td>
-            <td>CHURCH</td>
-        </tr>
-        <tr>
-            <td>THURSDAYS</td>
-            <td>FELLOWSHIP</td>
-            <td>CHURCH</td>
-        </tr>
+        {% endfor  %}
     </table>
-
 </main>
 <footer>
     <p>Follow us:</p>
